@@ -1,31 +1,25 @@
 package com.sendi.v1.security;
 
-import com.sendi.v1.domain.security.Authority;
-import com.sendi.v1.domain.security.User;
-import com.sendi.v1.repo.security.UserRepository;
+import com.sendi.v1.security.domain.Authority;
+import com.sendi.v1.security.domain.User;
+import com.sendi.v1.security.repo.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
 public class JpaUserDetailsService implements UserDetailsService {
 
-    @Autowired
     private final UserRepository userRepository;
 
     @Transactional

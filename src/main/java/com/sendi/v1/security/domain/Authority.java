@@ -1,7 +1,6 @@
-package com.sendi.v1.domain.security;
+package com.sendi.v1.security.domain;
 
 import lombok.*;
-import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import java.util.Set;
